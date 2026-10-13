@@ -1,0 +1,6 @@
+.git
+.gitignore
+Jenkinsfile
+.dockerignore
+README.md
+.env
