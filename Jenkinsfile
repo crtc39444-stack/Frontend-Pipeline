@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         IMAGE = 'goutam2705/frontend-pipeline'
-        EC2_HOST = 'YOUR_EC2_PUBLIC_IP'
+        EC2_HOST = '15.206.174.3'
     }
 
     stages {
@@ -19,8 +19,8 @@ pipeline {
                 withCredentials([
                     usernamePassword(
                         credentialsId: 'dockerhub-creds',
-                        usernameVariable: 'USER',
-                        passwordVariable: 'TOKEN'
+                        usernameVariable: 'goutam2705',
+                        passwordVariable: 'priyal chinaray'
                     )
                 ]) {
                     sh '''
@@ -51,7 +51,7 @@ pipeline {
 
         stage('Verify') {
             steps {
-                sh 'curl -f http://$EC2_HOST/'
+                sh 'curl -f http://15.206.174.3/'
             }
         }
     }
