@@ -20,12 +20,12 @@ pipeline {
                     usernamePassword(
                         credentialsId: 'dockerhub-creds',
                         usernameVariable: 'goutam2705',
-                        passwordVariable: 'priyal chinaray'
+                        passwordVariable: 'dckr_pat_wGe_Acr7thFnDklK9_EW-Ygx5A4'
                     )
                 ]) {
                     sh '''
                         docker build -t $IMAGE:$BUILD_NUMBER .
-                        echo "$TOKEN" | docker login -u "$USER" --password-stdin
+                        echo "dckr_pat_wGe_Acr7thFnDklK9_EW-Ygx5A4" | docker login -u "goutam2705" --password-stdin 
                         docker push $IMAGE:$BUILD_NUMBER
                         docker logout
                     '''
